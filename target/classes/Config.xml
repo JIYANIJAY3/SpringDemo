@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.inexture.springDemo.bean.StudentBean"
+		name="studentbean">
+
+		<property name="Id">
+			<value>1</value>
+		</property>
+		<property name="Name">
+			<value>Jay</value>
+		</property>
+		<property name="StudentAddress">
+			<value>Ahmedabad</value>
+		</property>
+	</bean>
+
+	<bean class="com.inexture.springDemo.bean.StudentBean"
+		name="studentbean2">
+		<property name="Id" value="1" />
+		<property name="Name" value="Nikhil" />
+		<property name="StudentAddress" value="Amreli" />
+	</bean>
+
+	<!-- Using p schema -->
+	<bean class="com.inexture.springDemo.bean.StudentBean"
+		name="student3" p:Id="101" p:Name="JayDeep" p:StudentAddress="Mumbai" />
+
+	<bean id="student"
+		class="com.inexture.springDemo.bean.StudentBean">
+		<constructor-arg index="0" value="1" />
+		<constructor-arg index="1" value="Jiyani" />
+		<constructor-arg index="2" value="Surat" />
+	</bean>
+</beans>

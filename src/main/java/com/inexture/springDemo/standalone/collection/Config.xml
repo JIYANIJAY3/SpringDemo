@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd 
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.3.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<context:annotation-config />
+	<util:list list-class="java.util.LinkedList" id="mysubject">
+		<value>Java</value>
+		<value>c++</value>
+		<value>javascript</value>
+		<value>python</value>
+	</util:list>
+
+	<bean name="useraddressbean"
+		class="com.inexture.springDemo.standalone.collection.UserAddressBean">
+		<property name="country" value="uk" />
+		<property name="city" value="uk" />
+		<property name="pincode" value="787878" />
+	</bean>
+
+	<bean name="userbean"
+		class="com.inexture.springDemo.standalone.collection.UserBean">
+		<property name="name" value="Darshan" />
+		<property name="id" value="101"></property>
+		<property name="subject" ref="mysubject"></property>
+	</bean>
+</beans>
