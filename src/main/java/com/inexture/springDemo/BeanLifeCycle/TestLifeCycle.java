@@ -16,7 +16,7 @@ public class TestLifeCycle {
 		
 		UsingAnnotation usingAnnotation = (UsingAnnotation) context.getBean("usingannotation");
 		System.out.println(usingAnnotation);
-		context.registerShutdownHook();
-		context.close();
+		//context.registerShutdownHook();
+		//context.close();
 	}
 }
